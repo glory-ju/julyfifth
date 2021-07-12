@@ -16,8 +16,10 @@
 {#<div style="text-align: center; height: 20rem; background-color: mediumaquamarine;#}
 {#border-radius: 1rem; margin: 2rem; overflow: hidden;">#}
 <div style="margin: 2rem; text-align: center">
-    <h1 style="color: red;">METHOD</h1>
-
+    <h1 style="color: red; font-family: 'Pacifico', cursive"
+        class="m-5">
+        METHOD
+    </h1>
 {#    <div class="'testing" style="display: block">block</div>#}
 {#    <div class="'testing" style="display: inline">inline</div>#}
 {#    <div class="'testing" style="display: inline-block">inline-block</div>#}
@@ -44,12 +46,21 @@
 
     <form action="/accounts/hello_world/" method="post">
         {% csrf_token %}
-        <input type="text" name="hello_world_input">
-        <input class="btn btn-dark rounded-pill px-4" type="submit">
+        <div class="input-group mb-3 w-50 m-auto">
+            <input type="text" class="form-control"
+                   name="hello_world_input">
+            <button class="btn btn-dark" type="submit">
+                Button
+            </button>
+        </div>
     </form>
 
-    {% if hello_world_output %}
-    <h3>{{ hello_world_output.text }}</h3>
+    {% if hello_world_list %}
+
+        {% for hello_world in hello_world_list %}
+    <h3>{{ hello_world.text }}</h3>
+        {% endfor %}
+
     {% endif %}
 
 </div>
