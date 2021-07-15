@@ -2,11 +2,17 @@
 
     <div class="pragmatic_header_logo">
     {#    font-family에서 'Pacifico' 폰트가 적용되지 않을 시 'cursive'를 사용해라. 라는 의미    #}
-        <h1>5ban Park's class</h1>
+        <h1>
+            <a href="{% url 'accountapp:hello_world' %}">
+                5ban Park's class
+            </a>
+        </h1>
     </div>
     <div class="pragmatic_header_button">
         <span>navigation1</span>
         <span>navigation2</span>
+
+        {% if not user.is_authenticated %}
         <span>
             <a href="{% url 'accountapp:login' %}">
                 Login
@@ -17,6 +23,13 @@
                 SignUp
             </a>
         </span>
+        {% else %}
+        <span>
+            <a href="{% url 'accountapp:logout' %}">
+                Logout
+            </a>
+        </span>
+        {% endif %}
     </div>
 
 </div>
