@@ -6,6 +6,7 @@
         <div class="m-5">
             <h4>{{ target_user.username }}</h4>
         </div>
+        {% if user == target_user %}
         <div>
             {{ target_user.date_joined }}
         </div>
@@ -14,11 +15,12 @@
                 Update Info
             </a>
         </div>
-            <div>
+        <div>
             <a href="{% url 'accountapp:delete' pk=target_user.pk %}">
                 Quit
             </a>
         </div>
+        {% endif %}
     </div>
 
 
