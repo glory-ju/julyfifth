@@ -13,7 +13,8 @@ from accountapp.decoraters import account_ownership_required
 from accountapp.forms import AccountCreationForm
 from accountapp.models import HelloWorld
 
-@login_required(login_url=reverse_lazy('accountapp:login'))
+# @login_required(login_url=reverse_lazy('accountapp:login'))
+@login_required
 def hello_world(request):
     if request.method == "POST":
 

@@ -20,3 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('accountapp.urls'))
 ]
+
+# terminal 에서 python manage.py createsuperuser 입력
