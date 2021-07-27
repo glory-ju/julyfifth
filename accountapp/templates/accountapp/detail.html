@@ -4,7 +4,15 @@
 
     <div class="text-center mw-500 m-auto">
         <div class="m-5">
-            <h4>{{ target_user.username }}</h4>
+            {% if target_user.profile %}
+            <h4>{{ target_user.profile.nickname }}</h4>
+            {% else %}
+            <h4>
+                <a href="{% url 'profileapp:create' %}">
+                    Create Profile
+                </a>
+            </h4>
+            {% endif %}
         </div>
         {% if user == target_user %}
         <div>
