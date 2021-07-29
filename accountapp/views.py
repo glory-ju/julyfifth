@@ -60,6 +60,9 @@ class AccountUpdateView(UpdateView):
     success_url = reverse_lazy('accountapp:hello_world')
     template_name = 'accountapp/update.html'
 
+    def get_success_url(self):
+        return reverse('accountapp:detail', kwargs={'pk': self.object.pk})
+
     # @login_required
     # def get(self, request, *args, **kwargs):
     #     if request.user.is_authenticated and self.get_object() == request.user:
