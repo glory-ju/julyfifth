@@ -32,6 +32,7 @@ class SubscriptionView(RedirectView):
 
 
 
+@method_decorator(login_required, 'get')
 class SubscriptionListView(ListView):
     model = Article
     context_object_name = 'article_list'
