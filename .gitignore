@@ -84,3 +84,10 @@ __pycache__/
 media/
 
 staticfiles/
+
+gis_5ban.pem
+
+# 비밀키
+gis_5ban_gcp
+# 공개키
+gis_5ban_gcp.pub
